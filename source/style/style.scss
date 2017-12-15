@@ -1,4 +1,89 @@
-body{
+body {
+    min-height: 100%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    height: 600px;
+    max-width: 700px;
+    border: 1px solid #111;
+    margin: 0 auto;
+}
+
+.card__property {
+    position: relative;
+    transition: all 1.5s ease-in-out;
+    transform-style: preserve-3d;
+    width: 320px;
+    height: 200px;
+    border: 1px solid #111;
+    border-radius: 10px;
+    margin: 20px;
+    background: lightblue;
+}
+
+.card__property:hover {
+    transform: rotateY(180deg);
+}
+
+.card__top {
+    display: flex;
+}
+
+.card__top-left {
+    flex-grow: 4;
+}
+
+.card__top-right {
+    flex-grow: 1;
+}
+
+.card__chip {
+    width: 50px;
+    height: 50px;
     background: red;
-    color: white;
+}
+
+.card__logo {}
+
+
+/*card content*/
+
+.card__bottom {
+    display: flex;
+}
+
+.card__bottom-left {
+    flex-grow: 3;
+}
+
+.card__bottom-right {
+    flex-grow: 1;
+}
+
+.container__setting-card {
+    perspective: 500px;
+}
+
+.card__property.front__card,
+.card__property .back__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+}
+
+.front__card {
+    z-index: 2;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+.back__card {
+    z-index: 1;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
