@@ -22,8 +22,12 @@ body {
     background: lightblue;
 }
 
-.card__property:hover {
+.hover {
     transform: rotateY(180deg);
+}
+
+.hover1 {
+    transform: -rotateY(180deg);
 }
 
 .card__top {

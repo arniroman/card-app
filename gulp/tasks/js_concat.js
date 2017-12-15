@@ -5,7 +5,8 @@ module.exports = function() {
                             './source/js/controllers/cardNumCtrl.js',
                             './source/js/controllers/cardNameCtrl.js',
                             './source/js/controllers/cardExpiryCtrl.js',
-                            './source/js/controllers/cardCvcCtrl.js'
+                            './source/js/controllers/cardCvcCtrl.js',
+                            './source/js/controllers/cardFlipCtrl.js'
             ])
             .on('error', $.gp.notify.onError(function(error) {
                 return {

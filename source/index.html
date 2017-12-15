@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" ng-controller="cardFlipCtrl">
         <section class="header">
 
             <div class="container__setting-card">
-                <div class="card__property father">
+                <div ng-class="styleObj">
                     <div class="front__card">
                         <div class="card__top">
                             <div class="card__top-left">
@@ -33,13 +33,12 @@
                             <div class="card__bottom-left" ng-controller="cardNameCtrl">
                                 <div class="card__user-name">{{card_name}}</div>
                             </div>
-                            <div class="card__bottom-right" ng-controller="cardExpiryCtrl">
-                                <div class="card__user-data">{{card_expiry}}</div>
+                            <div class="card__bottom-right">
+                                <div>{{card_expiry}}</div>
                             </div>
                         </div>
-
                     </div>
-                    <div class="back__card">
+                    <div class="back__card" ng-class="selectClass">
                         back
                     </div>
                 </div>
@@ -63,7 +62,7 @@
             sss
             <div class="card__cvc-property" ng-controller="cardCvcCtrl">
                 <div class="card__cvc-title">Curd Number</div>
-                <input class="form-control" type="text" placeholder="Default input" ng-model="card_cvc" ng-keyup="sendData()">
+                <input class="form-control" type="text" placeholder="Default input" ng-model="card_cvc" ng-keyup="sendData()" ng-focus="click1()" ng-blur="click2()">
             </div>
         </section>
     </div>
