@@ -1,6 +1,6 @@
-#How to run this application?
+# How to run this application?
 
-##desired presets:
+## desired presets:
 * git
 * nodejs
 
