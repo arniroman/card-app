@@ -1,7 +1,8 @@
 angular.module('app').controller('cardNameCtrl', function($scope, $rootScope) {
-    
-  $scope.$on('inputEvent1', function(event, arg) {
-          $scope.card_name = arg.message
+    $scope.labe = 'FULL NAME'
+  $scope.$on('inputEvent1', function(event, arg) { 
+          $scope.card_name = arg.message 
+          $scope.labe =  $scope.card_name
       })
 
       $scope.sendData = function() {
@@ -9,4 +10,5 @@ angular.module('app').controller('cardNameCtrl', function($scope, $rootScope) {
               message: $scope.card_name
           })
       }
+
 })
