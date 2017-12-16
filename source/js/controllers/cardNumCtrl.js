@@ -1,13 +1,16 @@
+/*--- controller cardNumCtrl ---*/
 angular.module('app').controller('cardNumCtrl', function($scope, $rootScope) {
-    $scope.labe = '•••• •••• •••• ••••'
+    /*--- label default ---*/
+    $scope.label = '•••• •••• •••• ••••';
+    /*--- create new inputEvent ---*/
     $scope.$on('inputEvent', function(event, arg) {
-            $scope.card_numb = arg.message
-            $scope.labe =  $scope.card_numb
-        })
+        $scope.card_numb = arg.message;
+        $scope.label = $scope.card_numb;
+    });
 
-        $scope.sendData = function() {
-            $rootScope.$broadcast('inputEvent', {
-                message: $scope.card_numb
-            })
-        }
-})
+    $scope.sendData = function() {
+        $rootScope.$broadcast('inputEvent', {
+            message: $scope.card_numb
+        });
+    };
+});

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +11,26 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
+
 <body>
+    <!-- == wrapper == -->
     <div class="wrapper">
+        <!-- == header == -->
         <section class="header">
+            <!-- == general settings card == -->
             <div class="container__setting-card" ng-controller="cardFlipCtrl">
                 <div ng-class="styleObj">
+                    <!-- == front side card == -->
                     <div class="front__card">
                         <div class="card__top">
                             <div class="card__top-left">
-                                <div class="card__chip"><div class="card__chip-inline"></div></div>
+                                <div class="card__chip">
+                                    <div class="card__chip-inline"></div>
+                                </div>
                             </div>
                             <div class="card__top-right">
-                                <div class="card__logo"> 
+                                <!-- == logo settings == -->
+                                <div class="card__logo">
                                     <div class="card__logo-top"></div>
                                     <div class="card__logo-center">VISA</div>
                                     <div class="card__logo-bottom"></div>
@@ -29,66 +38,67 @@
                             </div>
                         </div>
                         <div class="card__content" ng-controller="cardNumCtrl">
-                            <div class="card__number" >{{labe}}</div>
+                            <div class="card__number">
+                                {{label}}
+                            </div>
                         </div>
-
                         <div class="card__bottom">
                             <div class="card__bottom-left" ng-controller="cardNameCtrl">
                                 <div class="card__user-name">
-                                   {{labe}}
+                                    {{label}}
                                 </div>
                             </div>
                             <div class="card__bottom-right" ng-controller="cardExpiryCtrl">
                                 <div class="date__config-name">month/year</div>
-                                <div class="date__config">{{labe}}</div>
+                                <div class="date__config">
+                                    {{label}}
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- == back side card == -->
                     <div class="back__card" ng-class="selectClass" ng-controller="cardCvcCtrl">
                         <div class="back__card-top">
                             <div class="card__band-top"></div>
                         </div>
-                        <div class="back__card-content" >
+                        <div class="back__card-content">
                             <div class="card__band-center"></div>
-                            <div class="cvc">{{labe}}</div>
+                            <div class="cvc">
+                                {{label}}
+                            </div>
                         </div>
-                        <div class="back__card-bottom" >
+                        <div class="back__card-bottom">
                             <div class="card__chip card__chip-bottom ">
                                 <div class="card__chip-inline"></div>
-                            </div> 
-                            <div class="back__card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, minus quo quaerat.</div> 
+                            </div>
+                            <div class="back__card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, minus quo quaerat.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- == setting content input == -->
         <section class="content-input">
-            <div class="card__numb-property" ng-controller="cardNumCtrl">
-                <div class="card__numb-title">Card Number</div>
-                <input autocomplete="off"  class="form-control" type="text" placeholder="Card number" ng-model="card_numb" ng-keyup="sendData()">
+            <div class="general__card-property" ng-controller="cardNumCtrl">
+                <div class="general__card-title">Card Number</div>
+                <input maxlength="19" autocomplete="off" class="form-control" type="text" placeholder="Card number" ng-model="card_numb" ng-keyup="sendData()">
             </div>
-            
-            <div class="card__name-property" ng-controller="cardNameCtrl">
-                <div class="card__name-title">Card Name</div>
-                <input class="form-control" type="text" placeholder="Full name" ng-model="card_name" ng-click="hideBlockFunc() " ng-keyup="sendData()">
+            <div class="general__card-property" ng-controller="cardNameCtrl">
+                <div class="general__card-title">Card Name</div>
+                <input maxlength="15" class="form-control" type="text" placeholder="Full name" ng-model="card_name" ng-keyup="sendData()">
             </div>
-            
-            <div class="card__expiry-property" ng-controller="cardExpiryCtrl">
-                <div class="card__expiry-title">Curd Number</div>
-                <input class="form-control" type="text" placeholder="MM/YY" ng-model="card_expiry" ng-keyup="sendData()" ng-click="hideBlockFunc()">
+            <div class="general__card-property" ng-controller="cardExpiryCtrl">
+                <div class="general__card-title">Card Number</div>
+                <input maxlength="5" class="form-control" type="text" placeholder="MM/YY" ng-model="card_expiry" ng-keyup="sendData()">
             </div>
-            
-            <div class="card__cvc-property" ng-controller="cardCvcCtrl">
-                <div class="card__cvc-title">Curd Number</div>
-                <input class="form-control" type="text" placeholder="CVC" ng-model="card_cvc" ng-keyup="sendData()" ng-focus="flipCardOn()" ng-click="hideBlockFunc()" ng-blur="flipCardOf()">
+            <div class="general__card-property" ng-controller="cardCvcCtrl">
+                <div class="general__card-title">Card Number</div>
+                <input maxlength="3" class="form-control" type="text" placeholder="CVC" ng-model="card_cvc" ng-keyup="sendData()" ng-focus="flipCardOn()" ng-blur="flipCardOf()">
             </div>
         </section>
     </div>
-    <div ng-controller="cardNumCtrl">
-        {{1+2}}
-    </div>
 
-
+    <!-- == scripets == -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
