@@ -15,12 +15,12 @@ angular.module('app').controller('cardCvcCtrl', function($scope, $rootScope) {
     /*--- create new inputEventFlip ---*/
     $scope.flipCardOn = function() {
         $rootScope.$broadcast('inputEventFlip', {
-            messe: $scope.styleObjFlip
+            message: $scope.styleObjFlip
         });
     };
     $scope.flipCardOf = function() {
         $rootScope.$broadcast('inputEventFlip', {
-            messe: $scope.styleObjRemoveFlip
+            message: $scope.styleObjRemoveFlip
         });
     };
     /*--- Style for card ---*/

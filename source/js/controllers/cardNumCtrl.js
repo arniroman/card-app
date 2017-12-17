@@ -6,6 +6,7 @@ angular.module('app').controller('cardNumCtrl', function($scope, $rootScope) {
     $scope.$on('inputEvent', function(event, arg) {
         $scope.card_numb = arg.message;
         $scope.label = $scope.card_numb;
+        
     });
 
     $scope.sendData = function() {

@@ -196,14 +196,10 @@ body {
 }
 
 .front__card {
-    z-index: 2;
-    border-radius: 10px;
     backface-visibility: hidden;
 }
 
 .back__card {
-    z-index: 1;
-    border-radius: 10px;
     backface-visibility: hidden;
     transform: rotateY(180deg);
 }
